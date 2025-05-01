@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 小黎工作室
-subtitle: 一个默默无闻de网站，分享干货与教程
-description: 提供技术支持与帮助
-keywords: studio
-author: Carry Studio CO LTD
-language: zh-CN
-timezone: Asia/Shanghai
+title: Hexo
+subtitle: ''
+description: ''
+keywords:
+author: John Doe
+language: en
+timezone: ''
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
