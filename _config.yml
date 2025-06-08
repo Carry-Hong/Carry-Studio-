@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 小黎工作室
+title: Carry-Hong Studio
 subtitle: 一个默默无闻de网站，分享干货与教程
 description: 提供技术支持与帮助
 keywords: studio
-author: Carry Studio CO LTD
+author: Carry Studio CO，LTD
 language: zh-CN
 timezone: Asia/Shanghai
 
@@ -39,14 +39,14 @@ external_link:
   field: site # Apply to the whole site
   exclude: ''
 filename_case: 0
-render_drafts: false
-post_asset_folder: false
-relative_link: false
+render_drafts: true
+post_asset_folder: true
+relative_link: true
 future: true
 syntax_highlighter: highlight.js
 highlight:
   line_number: true
-  auto_detect: false
+  auto_detect: true
   tab_replace: ''
   wrap: true
   hljs: false
@@ -96,7 +96,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: butterfly
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
