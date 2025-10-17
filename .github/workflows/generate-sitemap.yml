@@ -1,0 +1,49 @@
+name: Generate Sitemap
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'source/_posts/**'
+      - '_config.yml'
+      - 'themes/butterfly/_config.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'source/_posts/**'
+      - '_config.yml'
+      - 'themes/butterfly/_config.yml'
+
+jobs:
+  generate-sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Generate sitemap
+        run: npx hexo generate
+      
+      - name: Copy sitemap to source directory
+        run: cp public/sitemap.xml source/
+      
+      - name: Commit and push sitemap
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add source/sitemap.xml
+          git commit -m "Update sitemap.xml" || echo "No changes to commit"
+          git push
